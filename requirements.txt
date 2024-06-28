@@ -1,0 +1,6 @@
+djangorestframework
+psycopg[binary]
+python-dotenv
+SQLAlchemy
+requests
+django-cors-headers
