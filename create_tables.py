@@ -1,12 +1,14 @@
 # create_tables.py
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from sqlalchemy import create_engine
 from sqlalchemy_config import Base
 from sphere_backend.models import Transaction, LineItem, Address
 
-DATABASE_URL = "postgresql+psycopg://postgres:test@localhost:5432/postgres"
-
-engine = create_engine(DATABASE_URL)
+engine = create_engine(os.getenv('DB_URL'))
 
 # Create all tables
 Base.metadata.create_all(bind=engine)
